@@ -4,6 +4,12 @@ Stryker supports Angular projects using the Angular CLI starting from @angular/c
 ## @angular/cli 6.1.0 and higher
 Recommended stryker packages: `npm i -D stryker-api stryker stryker-karma-runner stryker-typescript stryker-html-reporter`
 
+Recommended other packages: 
+* @angular/cli 6.1.0 or higher
+* @angular-devkit/build-angular 0.7.2 or higher
+* karma 2.0.4 or higher
+* typescript 2.4.2 or higher
+
 ### Configuration
 After installing the recommended packages, create the `stryker.conf.js` file in your repository. 
 The configuration below contains a good starting point for Angular projects. 
