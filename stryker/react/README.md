@@ -16,7 +16,7 @@ Coverage analysis is unfortunately not supported as of right now.
 ```js
 module.exports = function (config) {
     config.set({
-    mutate: ['src/**/*.js', '!src/**/*@(.test|.spec|Spec).js'],
+    mutate: ['src/**/*.js?(x)', '!src/**/*@(.test|.spec|Spec).js?(x)'],
     mutator: 'javascript',
     testRunner: 'jest',
     reporter: ['progress', 'clear-text', 'html'],
@@ -35,6 +35,6 @@ Recommended stryker packages: `npm i -D stryker-api stryker stryker-jest-runner 
 
 Configuration:
 ```js
-mutate: ['src/**/*.ts', '!src/**/*@(.test|.spec|Spec).ts'],
+mutate: ['src/**/*.ts?(x)', '!src/**/*@(.test|.spec|Spec).ts?(x)'],
 mutator: 'typescript',
 ```
