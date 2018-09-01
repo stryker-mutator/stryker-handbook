@@ -1,13 +1,3 @@
-----
-
-## On this page
-{:.no_toc}
-
-- TOC
-{:toc}
-
-----
-
 # Angular
 
 Stryker supports Angular projects using the Angular CLI starting from @angular/cli v6.1.0. Are you using an older version? Then there are some tips later in this document.
