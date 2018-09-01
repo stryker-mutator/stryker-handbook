@@ -2,7 +2,7 @@
 
 Stryker supports a variety of mutators, which are listed below.
 
-## Supported Mutators
+## Support
 
 | Mutator           | `Stryker` | `Stryker.NET` | `Stryker4s` |
 | ----------------- | :-----: | :---------: | :-------: |
@@ -13,6 +13,7 @@ Stryker supports a variety of mutators, which are listed below.
 | [Update operators](#update-operators) | ✅ | ❗ | ❌ |
 | [Remove conditionals](#remove-conditionals) | ✅ | ❗ | ❌ |
 | [Array Declarator](#array-declarator) | ✅ | ❗ | ❌ |
+| [Block statement](#block-statement) | ✅ | ❗ | ❌ |
 
 ## Binary operators
 
@@ -99,16 +100,22 @@ new Array(1, 2, 3, 4) | new Array()
 [1, 2, 3, 4] | [ ]
 
 [🔝 Back to Top](#supported-mutators)
-                            
-            h3 Block statement
-            p This mutator removes the content of every block statement. For example the code:
-            pre
-                code.
-                    function saySomething() {
-                        console.log('Hello world!');   
-                    }
-            p becomes:
-            pre
-                code.
-                    function saySomething() { 
-                    }
+
+## Block statement
+
+This mutator removes the content of every block statement. For example the code:
+
+```javascript
+function saySomething() {
+  console.log('Hello world!');
+}
+```
+
+becomes:
+
+```javascript
+function saySomething() {
+}
+```
+
+[🔝 Back to Top](#supported-mutators)
