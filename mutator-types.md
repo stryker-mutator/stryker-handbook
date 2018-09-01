@@ -6,8 +6,8 @@ Stryker supports a variety of mutators, which are listed below.
 
 | Mutator | [Stryker](stryker/) | [Stryker.NET](stryker.net/) | [Stryker4s](stryker4s/) |
 | - | :-: | :-: | :-: |
-| [Binary Operators](#binary-operators) | ✅ | ✅ | ❗¹ |
-| [Boolean Substitutions](#boolean-substitutions) | ✅ | ✅ | ❗² |
+| [Binary Operators](#binary-operators) | ✅ | ✅ | ℹ️¹ |
+| [Boolean Substitutions](#boolean-substitutions) | ✅ | ✅ | ℹ️² |
 | [Logical operators](#logical-operators) | ✅ | ✅ | ✅ |
 | [Unary operators](#unary-operators) | ✅ | ✅ | ❌ |
 | [Update operators](#update-operators) | ✅ | ✅ | n/a |
