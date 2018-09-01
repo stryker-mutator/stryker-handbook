@@ -1,0 +1,18 @@
+user:Actor "Test enthusiast"
+stryker:Stryker[a]
+plugin:PluginLoader[a]
+cfg:ConfigReader[a]
+report:Reporter[a]
+
+user:stryker.runMutationTest(options)
+stryker:config=cfg.readConfig()
+stryker:plugin.load()
+[c:See initial test run]
+stryker:runResult=stryker.initialTestRun()&
+[/c]
+stryker:=report.Initial test result
+[c:See mutation test]
+stryker:mutationTestResult=stryker.mutationTest&
+[/c]
+stryker:=report.Report score
+stryker:=user.Report result

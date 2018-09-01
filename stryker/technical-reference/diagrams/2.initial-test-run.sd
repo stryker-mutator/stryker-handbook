@@ -1,0 +1,14 @@
+stryker:Stryker[a]
+transpiler:Transpiler facade[a]
+sc:SandboxCoordinator[a]
+/sandbox:Sandbox[a]
+
+stryker:sourceMaps,transpiledFiles=transpiler.transpile(sourceFiles)
+stryker:runResult=sc.initialTestRun()
+sc:sandbox.new
+sc:sandbox.initialize()
+sandbox:sandbox.fillSandbox(transpiledFiles)
+sc:runResult=sandbox.run()
+[c:RunTest]
+sandbox:sandbox.runTest
+[/c]
