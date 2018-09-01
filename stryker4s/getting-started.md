@@ -7,4 +7,4 @@ Currently, the only way to get started with Stryker4s is to use the [command tes
 
  ## Quickstart
 
- For the quickstart, see (stryker4s command test-runner guide)[guides/command.md]
+ For the quickstart, see [stryker4s command test-runner guide](guides/command.md)
