@@ -113,6 +113,8 @@ Original | Mutated
 `&=` | `|=`
 `|=` | `&=`
 
+[🔝 Back to Top](#supported-mutators)
+
 ## Array Declarator
 
 Original | Mutated
@@ -151,6 +153,8 @@ function saySomething() {
 }
 ```
 
+[🔝 Back to Top](#supported-mutators)
+
 ## Checked mutator
 
 Stryker.NET *specific mutator*
@@ -158,6 +162,8 @@ Stryker.NET *specific mutator*
 Original | Mutated
 | - | - |
 `checked(2 + 4)` | `2 + 4`
+
+[🔝 Back to Top](#supported-mutators)
 
 ## Method mutator
 
@@ -173,3 +179,5 @@ Original | Mutated
 `a.lastIndexOf(b)` | `a.indexOf(b)`
 `a.max` | `a.min`
 `a.min` | `a.max`
+
+[🔝 Back to Top](#supported-mutators)
