@@ -10,14 +10,14 @@ Stryker supports a variety of mutators, which are listed below.
 | [Boolean Substitutions](#boolean-substitutions) | ✅ | ✅ | ❗² |
 | [Logical operators](#logical-operators) | ✅ | ✅ | ✅ |
 | [Unary operators](#unary-operators) | ✅ | ✅ | ❌ |
-| [Update operators](#update-operators) | ✅ | ✅ | n/a |
+| [Update operators](#update-operators) | ✅ | ✅ | ⁿ/ₐ |
 | [Remove conditionals](#remove-conditionals) | ✅ | ❌ | ❌ |
-| [Assignment mutator](#assignment-mutator) | ❌ | ✅ | n/a |
+| [Assignment mutator](#assignment-mutator) | ❌ | ✅ | ⁿ/ₐ |
 | [Array declarator](#array-declarator) | ✅ | ❌ | ❌ |
 | [String mutator](#string-mutator) | ✅ | ❌ | ✅ |
 | [Block statement](#block-statement) | ✅ | ❌ | ❌ |
-| [Checked mutator](#checked-mutator) | n/a | ✅ | n/a |
-| [Method mutator](#method-mutator) | n/a | ❌ | ✅ |
+| [Checked mutator](#checked-mutator) | ⁿ/ₐ | ✅ | ⁿ/ₐ |
+| [Method mutator](#method-mutator) | ⁿ/ₐ | ❌ | ✅ |
 
 - ¹: Stryker4s does not support (`+`,`-`,`*`,`/` and `%` operators)
 - ²: Stryker4s does not support boolean substitutions with `!`
