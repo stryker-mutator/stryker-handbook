@@ -2,7 +2,7 @@
 
 The Stryker handbook is a comprehensive guide to the Stryker ecosystem.
 
-Please feel free to edit 
+Please feel free to contribute! It's as easy as editing directly from your browser.
 
 * [Mutation testing](mutation-testing.md)
 * [Supported Mutators](mutator-types.md#supported-mutators)
