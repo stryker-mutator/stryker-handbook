@@ -5,7 +5,7 @@ The Stryker handbook is a comprehensive guide to the Stryker ecosystem.
 Please feel free to edit 
 
 * [Mutation testing](mutation-testing.md)
-* [Supported Mutators](mutator-types.md)
+* [Supported Mutators](mutator-types.md#supported-mutators)
 * FAQ
 * Supported languages
   * [Javascript & TypeScript (Stryker)](stryker)
