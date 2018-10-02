@@ -4,7 +4,11 @@ Stryker supports Angular projects using the Angular CLI starting from @angular/c
 
 ## @angular/cli 6.1.0 and higher
 
-Recommended stryker packages: `npm i -D stryker-api stryker stryker-karma-runner stryker-typescript stryker-html-reporter`
+This setup only works with @angular/cli 6.1.0 or higher. Are you using an older version of Angular? Then we highly suggest upgrading to at least version 6.1.0 of the cli. You can use the [Angular Update Guide](https://update.angular.io/) to help you with this. If it's not possible for you to upgrade your Angular version, please check out [this repo and its commits](https://github.com/nicojs/angular-stryker-example).
+
+## Install
+
+Install the Stryker packages using this command: `npm i -D stryker-api stryker stryker-karma-runner stryker-typescript stryker-html-reporter`
 
 Recommended other packages:
 
@@ -35,19 +39,20 @@ module.exports = function (config) {
     testRunner: 'karma',
     karma: {
       configFile: 'src/karma.conf.js',
-      project: 'angular-cli',
+      projectType: 'angular-cli',
       config: {
         browsers: ['ChromeHeadless']
       }
     },
-    reporter: ['progress', 'clear-text', 'html'],
+    reporters: ['progress', 'clear-text', 'html'],
+    // maxConcurrentTestRunners: 2, // Recommended to not use all cores when running stryker with angular.
     coverageAnalysis: 'off'
   });
 };
 ```
 
-## Older Angular version
+It is recommended to configure the `maxConcurrentTestRunners` option and configure about half of your available cores there.
 
-Are you using an older version of Angular? Then we highly suggest upgrading to at least version 6.1.0 of the cli.
-You can use the [Angular Update Guide](https://update.angular.io/) to help you with this.
-If it's not possible for you to upgrade your Angular version, please check out [this repo and its commits](https://github.com/nicojs/angular-stryker-example).
+### Run
+
+Run Stryker using `npx run stryker`
