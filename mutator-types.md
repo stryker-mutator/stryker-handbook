@@ -60,8 +60,8 @@ Original | Mutated
 
 Original | Mutated
 | - | - |
-`a && b` | `a || b`
-`a \\ b` | `a && b`
+`a && b` | `a \|\| b` |
+`a \|\| b` | `a && b` |
 
 [🔝 Back to Top](#supported-mutators)
 
@@ -110,8 +110,8 @@ Original | Mutated
 `%=` | `*=`
 `<<=` | `>>=`
 `>>=`| `<<=`
-`&=` | `|=`
-`|=` | `&=`
+`&=` | `\|=`
+`\|=` | `&=`
 
 [🔝 Back to Top](#supported-mutators)
 
@@ -132,7 +132,7 @@ Original | Mutated
 `""` (empty string) | `"Stryker was here!"`
 `s"foo ${bar}"` (string interpolation) | `s""` ¹
 
-¹: Only works with string interpolation and not others (like Scalameta quasiquotes) to avoid compile errors
+¹ Only works with string interpolation and not others (like Scalameta quasiquotes) to avoid compile errors
 
 [🔝 Back to Top](#supported-mutators)
 
@@ -171,11 +171,11 @@ Original | Mutated
 | - | - |
 `a.filter(b)` | `a.filterNot(b)`
 `a.filterNot(b)` | `a.filter(b)`
-`a.exists(b`) | `a.forAll(b) 1`
+`a.exists(b`) | `a.forAll(b)`
 `a.forAll(b)` | `a.exists(b)`
 `a.isEmpty` | `a.nonEmpty`
 `a.nonEmpty` | `a.isEmpty`
-`a.indexOf` | `a.lastIndexOf(b) 1`
+`a.indexOf` | `a.lastIndexOf(b)`
 `a.lastIndexOf(b)` | `a.indexOf(b)`
 `a.max` | `a.min`
 `a.min` | `a.max`
