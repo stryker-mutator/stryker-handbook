@@ -11,8 +11,9 @@ Please feel free to contribute! It's as easy as editing directly from your brows
   * [Javascript & TypeScript (Stryker)](stryker)
     * [Getting Started](stryker/getting-started.md)
     * [Guides](stryker/guides/)
-      * [Angular](stryker/guides/angular.md)
-      * [React](stryker/guides/react.md)
+      * [Angular](stryker/guides/angular.md#angular)
+      * [React](stryker/guides/react.md#react)
+      * [vuejs](stryker/guides/vuejs.md#vuejs)
     * Technical Reference
   * [.NET (Stryker.NET)](stryker.net/)
     * [Getting Started](stryker.net/getting-started.md)
