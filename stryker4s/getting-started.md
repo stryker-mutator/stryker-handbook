@@ -18,6 +18,7 @@ You will have to edit the `base-dir` to match the codebase you want to mutate.
 Also, make sure the `test-runner` is configured with the commands you need to run your unit tests.    
 ```conf
 stryker4s {
+    log-level=INFO
     mutate=[
         "**/main/scala/**/*.scala"
     ]
