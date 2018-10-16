@@ -55,4 +55,4 @@ It is recommended to configure the `maxConcurrentTestRunners` option and configu
 
 ### Run
 
-Run Stryker using `npx run stryker`
+Run Stryker using `npx stryker run`
