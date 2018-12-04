@@ -1,144 +1,67 @@
 # Supported mutators
 
-Stryker supports a variety of mutators, which are listed below.
+All Stryker versions support a variety of different mutators. The difference in support is listed below.
 
 ## Support
 
-| Mutator | [Stryker](stryker/) | [Stryker.NET](stryker.net/) | [Stryker4s](stryker4s/) |
-| - | :-: | :-: | :-: |
-| [Binary Operators](#binary-operators) | ✅ | ✅ | ℹ️¹ |
-| [Boolean Substitutions](#boolean-substitutions) | ✅ | ✅ | ℹ️² |
-| [Logical operators](#logical-operators) | ✅ | ✅ | ✅ |
-| [Unary operators](#unary-operators) | ✅ | ✅ | ❌ |
-| [Update operators](#update-operators) | ✅ | ✅ | n/a |
-| [Remove conditionals](#remove-conditionals) | ✅ | ❌ | ❌ |
-| [Assignment mutator](#assignment-mutator) | ❌ | ✅ | n/a |
-| [Array declarator](#array-declarator) | ✅ | ❌ | ❌ |
-| [String mutator](#string-mutator) | ✅ | ❌ | ✅ |
-| [Block statement](#block-statement) | ✅ | ❌ | ❌ |
-| [Checked mutator](#checked-mutator) | n/a | ✅ | n/a |
-| [Method mutator](#method-mutator) | n/a | ❌ | ✅ |
+| Mutator                                           | [Stryker](stryker/) | [Stryker.NET](stryker.net/) | [Stryker4s](stryker4s/) |
+| ------------------------------------------------- | :-----------------: | :-------------------------: | :---------------------: |
+| [Arithmetic Operator](#arithmetic-operator)       | ✅                   | ✅                           | ❌                       |
+| [Array Declaration](#array-declaration)           | ✅                   | ❌                           | ❌                       |
+| [Assignment Expression](#assignment-expression)   | ❌                   | ✅                           | n/a                     |
+| [Block Statement](#block-statement)               | ✅                   | ❌                           | ❌                       |
+| [Boolean Literal](#boolean-literal)               | ✅                   | ✅                           | ️✅¹                     |
+| [Checked Statement](#checked-statement)           | n/a                 | ✅                           | n/a                     |
+| [Conditional Expression](#conditional-expression) | ✅                   | ✅                           | ❌                       |
+| [Equality Operator](#equality-operator)           | ✅                   | ✅                           | ✅                       |
+| [Logical Operator](#logical-operator)             | ✅                   | ✅                           | ✅                       |
+| [Method Expression](#method-expression)           | ❌                   | ✅                           | ✅                       |
+| [String Literal](#string-literal)                 | ✅                   | ✅                           | ✅                       |
+| [Unary Operator](#unary-operator)                 | ✅                   | ✅                           | ❌                       |
+| [Update Operator](#update-operator)               | ✅                   | ✅                           | n/a                     |
 
-- ¹: Stryker4s does not support (`+`,`-`,`*`,`/` and `%` operators)
-- ²: Stryker4s does not support boolean substitutions with `!`
+- ¹: Stryker4s does not support `!` boolean substitutions
 
-## Binary operators
+## Arithmetic Operator
 
-Original | Mutated
-| - | - |
-`a + b` | `a - b`
-`a - b` | `a + b`
-`a * b` | `a / b`
-`a / b` | `a * b`
-`a % b` | `a * b`
-`a < b` | `a <= b`
-`a < b` | `a >= b`
-`a <= b` | `a < b`
-`a <= b` | `a > b`
-`a > b` | `a >= b`
-`a > b` | `a <= b`
-`a >= b` | `a > b`
-`a >= b` | `a < b`
-`a == b` | `a != b`
-`a != b` | `a == b`
-`a === b` | `a !== b`
-`a !== b` | `a === b`
+| Original | Mutated |
+| -------- | ------- |
+| `a + b`  | `a - b` |
+| `a - b`  | `a + b` |
+| `a * b`  | `a / b` |
+| `a / b`  | `a * b` |
+| `a % b`  | `a * b` |
 
 [🔝 Back to Top](#supported-mutators)
 
-## Boolean Substitutions
+## Array Declaration
 
-Original | Mutated
-| - | - |
-`true` | `false`
-`false` | `true`
-`!` | ` `
-
-[🔝 Back to Top](#supported-mutators)
-
-## Logical operators
-
-Original | Mutated
-| - | - |
-`a && b` | `a \|\| b` |
-`a \|\| b` | `a && b` |
+| Original                | Mutated       |
+| ----------------------- | ------------- |
+| `new Array(1, 2, 3, 4)` | `new Array()` |
+| `[1, 2, 3, 4]`          | `[ ]`         |
 
 [🔝 Back to Top](#supported-mutators)
 
-## Unary operators
+## Assignment Expression
 
-Original | Mutated
-| - | - |
-`+a` | `-a`
-`-a` | `+a`
-
-[🔝 Back to Top](#supported-mutators)
-
-## Update operators
-
-Original | Mutated
-| - | - |
-`a++` | `a--`
-`a--` | `a++`
-`++a` | `--a`
-`--a` | `++a`
+| Original | Mutated |
+| -------- | ------- |
+| `+=`     | `-=`    |
+| `-=`     | `+=`    |
+| `*=`     | `/=`    |
+| `/=`     | `*=`    |
+| `%=`     | `*=`    |
+| `<<=`    | `>>=`   |
+| `>>=`    | `<<=`   |
+| `&=`     | `\|=`   |
+| `\|=`    | `&=`    |
 
 [🔝 Back to Top](#supported-mutators)
 
-## Remove conditionals
+## Block Statement
 
-Original | Mutated
-| - | - |
-`for (var i = 0; i < 10; i++) { }` | `for (var i = 0; false; i++) { }`
-`while (a > b) { }` | `while (false) { }`
-`do { } while (a > b);` | `do { } while (false);`
-`if (a > b) { }` | `if (true) { }`
-`if (a > b) { }` | `if (false) { }`
-`var x = a > b ? 1 : 2;` | `var x = true ? 1 : 2;`
-`var x = a > b ? 1 : 2;` | `var x = false ? 1 : 2;`
-
-[🔝 Back to Top](#supported-mutators)
-
-## Assignment mutator
-
-Original | Mutated
-| - | - |
-`+=` | `-=`
-`-=` | `+=`
-`*=` | `/=`
-`/=` | `*=`
-`%=` | `*=`
-`<<=` | `>>=`
-`>>=`| `<<=`
-`&=` | `\|=`
-`\|=` | `&=`
-
-[🔝 Back to Top](#supported-mutators)
-
-## Array Declarator
-
-Original | Mutated
-| - | - |
-`new Array(1, 2, 3, 4)` | `new Array()`
-`[1, 2, 3, 4]` | `[ ]`
-
-[🔝 Back to Top](#supported-mutators)
-
-## String mutator
-
-Original | Mutated
-| - | - |
-`"foo"` (non-empty string) | `""` (empty string)
-`""` (empty string) | `"Stryker was here!"`
-`s"foo ${bar}"` (string interpolation) | `s""` ¹
-
-¹ Only works with string interpolation and not others (like Scalameta quasiquotes) to avoid compile errors
-
-[🔝 Back to Top](#supported-mutators)
-
-## Block statement
-
-This mutator removes the content of every block statement. For example the code:
+Removes the content of every block statement. For example the code:
 
 ```javascript
 function saySomething() {
@@ -155,29 +78,144 @@ function saySomething() {
 
 [🔝 Back to Top](#supported-mutators)
 
-## Checked mutator
+## Boolean Literal
 
-Stryker.NET *specific mutator*
-
-Original | Mutated
-| - | - |
-`checked(2 + 4)` | `2 + 4`
+| Original    | Mutated  |
+| ----------- | -------- |
+| `true`      | `false`  |
+| `false`     | `true`   |
+| `!(a == b)` | `a == b` |
 
 [🔝 Back to Top](#supported-mutators)
 
-## Method mutator
+## Checked Statement
 
-Original | Mutated
-| - | - |
-`a.filter(b)` | `a.filterNot(b)`
-`a.filterNot(b)` | `a.filter(b)`
-`a.exists(b`) | `a.forAll(b)`
-`a.forAll(b)` | `a.exists(b)`
-`a.isEmpty` | `a.nonEmpty`
-`a.nonEmpty` | `a.isEmpty`
-`a.indexOf` | `a.lastIndexOf(b)`
-`a.lastIndexOf(b)` | `a.indexOf(b)`
-`a.max` | `a.min`
-`a.min` | `a.max`
+Stryker.NET *specific mutator*
+
+| Original         | Mutated |
+| ---------------- | ------- |
+| `checked(2 + 4)` | `2 + 4` |
+
+[🔝 Back to Top](#supported-mutators)
+
+## Conditional Expression
+
+| Original                           | Mutated                           |
+| ---------------------------------- | --------------------------------- |
+| `for (var i = 0; i < 10; i++) { }` | `for (var i = 0; false; i++) { }` |
+| `while (a > b) { }`                | `while (false) { }`               |
+| `do { } while (a > b);`            | `do { } while (false);`           |
+| `if (a > b) { }`                   | `if (true) { }`                   |
+| `if (a > b) { }`                   | `if (false) { }`                  |
+| `var x = a > b ? 1 : 2;`           | `var x = true ? 1 : 2;`           |
+| `var x = a > b ? 1 : 2;`           | `var x = false ? 1 : 2;`          |
+
+[🔝 Back to Top](#supported-mutators)
+
+## Equality Operator
+
+| Original  | Mutated     |
+| --------- | ----------- |
+| `a < b`   | `a <= b`    |
+| `a < b`   | `a >= b`    |
+| `a <= b`  | `a < b`     |
+| `a <= b`  | `a > b`     |
+| `a > b`   | `a >= b`    |
+| `a > b`   | `a <= b`    |
+| `a >= b`  | `a > b`     |
+| `a >= b`  | `a < b`     |
+| `a == b`  | `a != b`    |
+| `a != b`  | `a == b`    |
+| `a === b` | `a !== b` ¹ |
+| `a !== b` | `a === b` ¹ |
+
+- ¹: Only supported on StrykerJS
+
+[🔝 Back to Top](#supported-mutators)
+
+## Logical Operator
+
+| Original   | Mutated    |
+| ---------- | ---------- |
+| `a && b`   | `a \|\| b` |
+| `a \|\| b` | `a && b`   |
+
+[🔝 Back to Top](#supported-mutators)
+
+## Method Expression
+
+Due to differences in language syntax, method expressions are implemented differently in each Stryker framework:
+
+### Stryker.NET:
+
+| Original              | Mutated             |
+| --------------------- | ------------------- |
+| `Distinct()`          | ` `                 |
+| `Reverse()`           | ` `                 |
+| `OrderBy()`           | ` `                 |
+| `OrderByDescending()` | ` `                 |
+| `SingleOrDefault()`   | `FirstOrDefault()`  |
+| `FirstOrDefault()`    | `SingleOrDefault()` |
+| `First()`             | `Last()`            |
+| `Last()`              | `First()`           |
+| `All()`               | `Any()`             |
+| `Any()`               | `All()`             |
+| `Skip()`              | `Take()`            |
+| `Take()`              | `Skip()`            |
+| `SkipWhile()`         | `TakeWhile()`       |
+| `TakeWhile()`         | `SkipWhile()`       |
+| `Min()`               | `Max()`             |
+| `Max()`               | `Min()`             |
+| `Sum()`               | `Count()`           |
+| `Count()`             | `Sum()`             |
+
+### Stryker4s: 
+
+| Original           | Mutated            |
+| ------------------ | ------------------ |
+| `a.filter(b)`      | `a.filterNot(b)`   |
+| `a.filterNot(b)`   | `a.filter(b)`      |
+| `a.exists(b)`      | `a.forAll(b)`      |
+| `a.forAll(b)`      | `a.exists(b)`      |
+| `a.drop(b)`        | `a.take(b)`        |
+| `a.take(b)`        | `a.drop(b)`        |
+| `a.isEmpty`        | `a.nonEmpty`       |
+| `a.nonEmpty`       | `a.isEmpty`        |
+| `a.indexOf`        | `a.lastIndexOf(b)` |
+| `a.lastIndexOf(b)` | `a.indexOf(b)`     |
+| `a.max`            | `a.min`            |
+| `a.min`            | `a.max`            |
+
+[🔝 Back to Top](#supported-mutators)
+
+## String Literal
+
+| Original                               | Mutated               |
+| -------------------------------------- | --------------------- |
+| `"foo"` (non-empty string)             | `""` (empty string)   |
+| `""` (empty string)                    | `"Stryker was here!"` |
+| `s"foo ${bar}"` (string interpolation) | `s""` ¹               |
+
+¹ For Stryker4s, only works with string interpolation and not other types of interpolation (like [Scalameta quasiquotes](https://scalameta.org/docs/trees/guide.html#with-quasiquotes)) to avoid compile errors
+
+[🔝 Back to Top](#supported-mutators)
+
+## Unary Operator
+
+| Original | Mutated |
+| -------- | ------- |
+| `+a`     | `-a`    |
+| `-a`     | `+a`    |
+
+[🔝 Back to Top](#supported-mutators)
+
+## Update Operator
+
+| Original | Mutated |
+| -------- | ------- |
+| `a++`    | `a--`   |
+| `a--`    | `a++`   |
+| `++a`    | `--a`   |
+| `--a`    | `++a`   |
 
 [🔝 Back to Top](#supported-mutators)
