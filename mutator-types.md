@@ -15,7 +15,7 @@ All Stryker versions support a variety of different mutators. The difference in 
 | [Conditional Expression](#conditional-expression) | ✅                   | ✅                           | ❌                       |
 | [Equality Operator](#equality-operator)           | ✅                   | ✅                           | ✅                       |
 | [Logical Operator](#logical-operator)             | ✅                   | ✅                           | ✅                       |
-| [Method Expression](#method-expression)           | ❌                   | ❌                           | ✅                       |
+| [Method Expression](#method-expression)           | ❌                   | ✅                           | ✅                       |
 | [String Literal](#string-literal)                 | ✅                   | ✅                           | ✅                       |
 | [Unary Operator](#unary-operator)                 | ✅                   | ✅                           | ❌                       |
 | [Update Operator](#update-operator)               | ✅                   | ✅                           | n/a                     |
@@ -143,6 +143,33 @@ Stryker.NET *specific mutator*
 [🔝 Back to Top](#supported-mutators)
 
 ## Method Expression
+
+Due to differences in language syntax, method expressions are implemented differently in each Stryker framework:
+
+### Stryker.NET:
+
+| Original              | Mutated             |
+| --------------------- | ------------------- |
+| `Distinct()`          | ` `                 |
+| `Reverse()`           | ` `                 |
+| `OrderBy()`           | ` `                 |
+| `OrderByDescending()` | ` `                 |
+| `SingleOrDefault()`   | `FirstOrDefault()`  |
+| `FirstOrDefault()`    | `SingleOrDefault()` |
+| `First()`             | `Last()`            |
+| `Last()`              | `First()`           |
+| `All()`               | `Any()`             |
+| `Any()`               | `All()`             |
+| `Skip()`              | `Take()`            |
+| `Take()`              | `Skip()`            |
+| `SkipWhile()`         | `TakeWhile()`       |
+| `TakeWhile()`         | `SkipWhile()`       |
+| `Min()`               | `Max()`             |
+| `Max()`               | `Min()`             |
+| `Sum()`               | `Count()`           |
+| `Count()`             | `Sum()`             |
+
+### Stryker4s: 
 
 | Original           | Mutated            |
 | ------------------ | ------------------ |
