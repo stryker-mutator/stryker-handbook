@@ -15,6 +15,8 @@ Please feel free to contribute! It's as easy as editing directly from your brows
       * [React](stryker/guides/react.md#react)
       * [vuejs](stryker/guides/vuejs.md#vuejs)
     * Technical Reference
+    * [Api](/stryker/api/)
+      * [Plugins](/stryker/api/plugins.md)
   * [.NET (Stryker.NET)](stryker.net/)
     * [Getting Started](stryker.net/getting-started.md)
   * [Scala (Stryker4s)](stryker4s/)
