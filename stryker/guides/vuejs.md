@@ -4,9 +4,9 @@ Stryker supports VueJS projects that use the vue-template-compiler.
 All configurations will require at least the vue-template-compiler 2.0.0 or higher.
 
 To get started using VueJS, please follow these steps:
-1. Install the recommended packages for all VueJS projects: `npm i -D stryker-api stryker stryker-vue-mutator stryker-html-reporter`
-2. Execute `npm i -D stryker-javascript-mutator` for JavaScript projects or `npm i -D stryker-typescript` for TypeScript projects
-3. Execute `npm i -D stryker-karma-runner` for Karma projects or `npm i -D stryker-jest-runner` for Jest projects
+1. Install the recommended packages for all VueJS projects: `npm i -D @stryker-mutator/core @stryker-mutator/vue-mutator @stryker-mutator/html-reporter`
+2. Execute `npm i -D @stryker-mutator/javascript-mutator` for JavaScript projects or `npm i -D @stryker-mutator/typescript` for TypeScript projects
+3. Execute `npm i -D @stryker-mutator/karma-runner` for Karma projects or `npm i -D @stryker-mutator/jest-runner` for Jest projects
 4. Create a stryker.conf.js file and configure it using the settings below
 
 Keep in mind that you may have to change some configuration settings such as paths to files.

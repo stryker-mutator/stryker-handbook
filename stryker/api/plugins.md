@@ -13,20 +13,20 @@ export enum PluginKind {
 }
 ```
 
-They are loaded using the [`plugins` configuration option](https://github.com/stryker-mutator/stryker/tree/master/packages/stryker#plugins-string)
+They are loaded using the [`plugins` configuration option](https://github.com/stryker-mutator/stryker/tree/master/packages/core#plugins-string)
 
 Each plugin has it's own job to do. For inspiration, checkout the [stryker monorepo](https://github.com/stryker-mutator/stryker/tree/master/packages).
 
 ## Creating a plugin
 
 Creating plugins is best done with typescript, as that will help you a lot with type safety. 
-We provide the `stryker-api` dependency for the types and basic helper functionality. Install it with: `npm install stryker-api`. 
+We provide the `@stryker-mutator/api` dependency for the types and basic helper functionality. Install it with: `npm install @stryker-mutator/api`. 
 
 Next, you need to create a class that _is the actual plugin_. For example:
 
 ```ts
-import { Transpiler } from 'stryker-api/transpile';
-import { File, StrykerOptions } from 'stryker-api/core';
+import { Transpiler } from '@stryker-mutator/api/transpile';
+import { File, StrykerOptions } from '@stryker-mutator/api/core';
 
 class FooTranspiler implements Transpiler {
   public transpile(files: ReadonlyArray<File>): Promise<ReadonlyArray<File>> {
@@ -47,7 +47,7 @@ A class example:
 
 ```ts
 import HtmlReporter from './HtmlReporter';
-import { PluginKind, declareClassPlugin } from 'stryker-api/plugin';
+import { PluginKind, declareClassPlugin } from '@stryker-mutator/api/plugin';
 
 export const strykerPlugins = [
   declareClassPlugin(PluginKind.Reporter, 'html', HtmlReporter)
@@ -57,7 +57,7 @@ export const strykerPlugins = [
 A factory method example:
 
 ```ts
-import { declareFactoryPlugin, PluginKind } from 'stryker-api/plugin';
+import { declareFactoryPlugin, PluginKind } from '@stryker-mutator/api/plugin';
 import { babelTranspilerFactory } from './BabelTranspiler';
 
 export const strykerPlugins = [
@@ -73,9 +73,9 @@ You can use it as well in your plugin
 See this example below. Here, a `Logger`, `StrykerOptions` and the `produceSourceMaps` boolean is injected.
 
 ```ts
-import { Transpiler } from 'stryker-api/transpile';
-import { File, StrykerOptions } from 'stryker-api/core';
-import { tokens, commonTokens } from 'stryker-api/plugin';
+import { Transpiler } from '@stryker-mutator/api/transpile';
+import { File, StrykerOptions } from '@stryker-mutator/api/core';
+import { tokens, commonTokens } from '@stryker-mutator/api/plugin';
 
 class PassThroughTranspiler implements Transpiler {
   public static inject = tokens(commonTokens.options, commonTokens.produceSourceMaps);

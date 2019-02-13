@@ -4,7 +4,7 @@ Stryker supports React projects using Jest with both JSX and TSX code.
 
 ## JSX project
 
-Recommended stryker packages: `npm i -D stryker-api stryker stryker-jest-runner stryker-javascript-mutator stryker-html-reporter`
+Recommended stryker packages: `npm i -D @stryker-mutator/core @stryker-mutator/jest-runner @stryker-mutator/javascript-mutator @stryker-mutator/html-reporter`
 
 Recommended other packages:
 
@@ -37,7 +37,7 @@ module.exports = function (config) {
 
 For projects using TypeScript and TSX you can follow the JSX guide but with a few differences:
 
-Recommended stryker packages: `npm i -D stryker-api stryker stryker-jest-runner stryker-typescript stryker-html-reporter`
+Recommended stryker packages: `npm i -D @stryker-mutator/core @stryker-mutator/jest-runner @stryker-mutator/typescript @stryker-mutator/html-reporter`
 
 Configuration:
 

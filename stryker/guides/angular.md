@@ -8,7 +8,7 @@ This setup only works with @angular/cli 6.1.0 or higher. Are you using an older 
 
 ## Install
 
-Install the Stryker packages using this command: `npm i -D stryker-api stryker stryker-karma-runner stryker-typescript stryker-html-reporter`
+Install the Stryker packages using this command: `npm i -D @stryker-mutator/core @stryker-mutator/karma-runner @stryker-mutator/typescript @stryker-mutator/html-reporter`
 
 Recommended other packages:
 
@@ -24,7 +24,7 @@ The configuration below contains a good starting point for Angular projects.
 You may have to change some paths or config settings like the selected browsers.
 We highly suggest using a headless browser when testing using stryker.
 
-Coverage analysis with [stryker-jasmine](http://npmjs.com/package/stryker-jasmine) is unfortunately not supported as of right now.
+Coverage analysis with [@stryker-mutator/jasmine-framework](http://npmjs.com/package/@stryker-mutator/jasmine-framework) is unfortunately not supported as of right now.
 
 ```js
 module.exports = function (config) {
