@@ -177,14 +177,20 @@ Due to differences in language syntax, method expressions are implemented differ
 | `a.filterNot(b)`   | `a.filter(b)`      |
 | `a.exists(b)`      | `a.forall(b)`      |
 | `a.forall(b)`      | `a.exists(b)`      |
-| `a.drop(b)`        | `a.take(b)`        |
 | `a.take(b)`        | `a.drop(b)`        |
+| `a.drop(b)`        | `a.take(b)`        |
+| `a.takeRight(b)`   | `a.dropRight(b)`   |
+| `a.dropRight(b)`   | `a.takeRight(b)`   |
+| `a.takeWhile(b)`   | `a.dropWhile(b)`   |
+| `a.dropWhile(b)`   | `a.takeWhile(b)`   |
 | `a.isEmpty`        | `a.nonEmpty`       |
 | `a.nonEmpty`       | `a.isEmpty`        |
 | `a.indexOf`        | `a.lastIndexOf(b)` |
 | `a.lastIndexOf(b)` | `a.indexOf(b)`     |
 | `a.max`            | `a.min`            |
 | `a.min`            | `a.max`            |
+| `a.maxBy(b)`       | `a.minBy(b)`       |
+| `a.minBy(b)`       | `a.maxBy(b)`       |
 
 [🔝 Back to Top](#supported-mutators)
 
