@@ -190,7 +190,7 @@ Due to differences in language syntax, method expressions are implemented differ
 | `a.max`            | `a.min`            |
 | `a.min`            | `a.max`            |
 | `a.maxBy(b)`       | `a.minBy(b)`       |
-| `a.minBy(b)`         | `a.maxBy(b)`       |
+| `a.minBy(b)`       | `a.maxBy(b)`       |
 
 [🔝 Back to Top](#supported-mutators)
 
