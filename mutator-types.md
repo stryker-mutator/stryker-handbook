@@ -10,9 +10,9 @@ All Stryker versions support a variety of different mutators. The difference in 
 | [Array Declaration](#array-declaration)           | ✅                   | ❌                           | ❌                       |
 | [Assignment Expression](#assignment-expression)   | ❌                   | ✅                           | n/a                     |
 | [Block Statement](#block-statement)               | ✅                   | ❌                           | ❌                       |
-| [Boolean Literal](#boolean-literal)               | ✅                   | ✅                           | ️✅¹                     |
+| [Boolean Literal](#boolean-literal)               | ✅                   | ✅                           | ️✅                     |
 | [Checked Statement](#checked-statement)           | n/a                 | ✅                           | n/a                     |
-| [Conditional Expression](#conditional-expression) | ✅                   | ✅                           | ❌                       |
+| [Conditional Expression](#conditional-expression) | ✅                   | ✅                           | ✅                       |
 | [Equality Operator](#equality-operator)           | ✅                   | ✅                           | ✅                       |
 | [Logical Operator](#logical-operator)             | ✅                   | ✅                           | ✅                       |
 | [Method Expression](#method-expression)           | ❌                   | ✅                           | ✅                       |
@@ -20,7 +20,7 @@ All Stryker versions support a variety of different mutators. The difference in 
 | [Unary Operator](#unary-operator)                 | ✅                   | ✅                           | ❌                       |
 | [Update Operator](#update-operator)               | ✅                   | ✅                           | n/a                     |
 
-- ¹: Stryker4s does not support `!` boolean substitutions
+
 
 ## Arithmetic Operator
 
@@ -84,7 +84,9 @@ function saySomething() {
 | ----------- | -------- |
 | `true`      | `false`  |
 | `false`     | `true`   |
-| `!(a == b)` | `a == b` |
+| `!(a == b)` | `a == b` ¹ | 
+
+- ¹: Not supported by Stryker4s
 
 [🔝 Back to Top](#supported-mutators)
 
@@ -102,13 +104,15 @@ Stryker.NET *specific mutator*
 
 | Original                           | Mutated                           |
 | ---------------------------------- | --------------------------------- |
-| `for (var i = 0; i < 10; i++) { }` | `for (var i = 0; false; i++) { }` |
+| `for (var i = 0; i < 10; i++) { }` | `for (var i = 0; false; i++) { }` ¹ |
 | `while (a > b) { }`                | `while (false) { }`               |
 | `do { } while (a > b);`            | `do { } while (false);`           |
 | `if (a > b) { }`                   | `if (true) { }`                   |
 | `if (a > b) { }`                   | `if (false) { }`                  |
-| `var x = a > b ? 1 : 2;`           | `var x = true ? 1 : 2;`           |
-| `var x = a > b ? 1 : 2;`           | `var x = false ? 1 : 2;`          |
+| `var x = a > b ? 1 : 2;`           | `var x = true ? 1 : 2;` ¹          |
+| `var x = a > b ? 1 : 2;`           | `var x = false ? 1 : 2;` ¹         |
+
+- ¹: Not supported by Stryker4s
 
 [🔝 Back to Top](#supported-mutators)
 
