@@ -6,6 +6,7 @@ Please feel free to contribute! It's as easy as editing directly from your brows
 
 * [Mutation testing](mutation-testing.md)
 * [Supported Mutators](mutator-types.md#supported-mutators)
+* [Mutant states and metrics](mutant-states-and-metrics.md)
 * FAQ
 * Supported languages
   * [Javascript & TypeScript (Stryker)](stryker)
