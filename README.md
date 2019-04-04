@@ -15,7 +15,7 @@ Please feel free to contribute! It's as easy as editing directly from your brows
       * [Angular](stryker/guides/angular.md#angular)
       * [React](stryker/guides/react.md#react)
       * [vuejs](stryker/guides/vuejs.md#vuejs)
-    * Technical Reference
+    * [Technical Reference](https://github.com/stryker-mutator/stryker-handbook/tree/master/stryker/technical-reference#technical-reference)
     * [Api](/stryker/api/)
       * [Plugins](/stryker/api/plugins.md)
   * [.NET (Stryker.NET)](stryker.net/)
