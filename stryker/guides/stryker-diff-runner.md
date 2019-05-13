@@ -5,6 +5,7 @@ To get started using `stryker-diff-runner`, please follow these steps:
 1. Install required packages for the script to run: `npm i -D @stryker-mutator/core @stryker-mutator/api stryker-diff-runner`
 2. Install required packages for the targeted project typology (Angular, React.js, Vue.js or Node.js).
 3. Add at least the `mutate` section of the *stryker.conf.js* file with the files you want to have mutation on.
+4. Run it through `npx stryker-diff-runner` or through any NPM script created from your own.
 
 Keep in mind that you may have to change some configuration settings such as paths to files.
 
@@ -34,3 +35,7 @@ as the result of the diff. The configuration will end up with :
   ]
 ```
 so that mutation testing will only be executed for the *src/controllers/user.js* that have been updated.
+
+## Sources
+
+Project's sources are [here](https://github.com/tverhoken/stryker-diff-runner)
