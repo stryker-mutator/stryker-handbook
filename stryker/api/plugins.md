@@ -1,6 +1,6 @@
 # Plugins
 
-You can extend Stryker with 5 plugin kinds:
+You can extend Stryker with 6 plugin kinds:
 
 ```ts
 export enum PluginKind {
