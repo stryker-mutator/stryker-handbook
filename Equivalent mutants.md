@@ -1,7 +1,7 @@
 # Equivalent mutants
 
 Suppose you are writing a big chunk of code. You have decided to run both unit and mutation tests.
-Your score of unit tests is 100% and mutation 99%. You think `I'll make 100%`. And so you try, and try, but you still have an issue in the same spot:
+Your score of unit tests is 100% and mutation 99%. You think "I'll make that 100%". After some work, you notice this part of your code:
 
 ```js
 var max = Math.max(a.comma, b.comma);
@@ -13,7 +13,7 @@ if (a.comma >= b.comma) {
 }
 ```
 
-Let's analise this example.
+Let's analyse this example.
 
 Assume `a.comma` is greater than `b.comma`. For example 4 and 2
 
@@ -44,10 +44,9 @@ if (3 >= 3) {
 
 Notice that 10 ** 0 = 1, so even if we change `>=` to `<=` and even `<` or `>` we will get the same output each time!
 
-It is called equivalent mutant.
+It is called _equivalent mutant_. There is no definitive way for Stryker to find and ignore them. There is currently also no way yet to mark them to be ignored.
 
-
-For now the only solution is by finding these by hand, which is time consuming. In `Stryker` we know some of them:
+For now the only solution is by finding these by hand, which is time consuming and try to rewrite the code so it won't occur, or accept that you won't make 100%.
 
 First one has been shown above. The easiest schema for this mutant is:
 
@@ -56,18 +55,18 @@ if(whatever condition) {
   number1 += 0  // can be `-= 0` or `*= 1` `/= 1`
 } else {
   number2 += 0  // can be `-= 0` or `*= 1` `/= 1`
-}```
-
+}
+```
 
 The second one we have found is about `BigNumber`
 
 since `-0n` is transformed to `0n`, doing
+
 ```
 a = 0n
 a = (a <= 0n) ? -a : a;
 ```
+
 will produce another equivalent mutant.
-
-
 
 So knowing that for now, help us finding more of them and don't be scared of not 100% mutation score!
