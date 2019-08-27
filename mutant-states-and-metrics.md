@@ -22,7 +22,7 @@ A mutant can have one of the following states:
   For example, the mutant resulted in an infinite loop in your code.
   Don't spend too much attention to this mutant. 
   It is counted as "detected". The logic here is that if this mutant were to be injected in your code,
-  you're CI build would detect it, because the tests will never complete.
+  your CI build would detect it, because the tests will never complete.
 * **Runtime error**\
   The running of the tests resulted in an error (rather than a failed test).
   This can happen for dynamic languages, were the mutant resulted in unparsable code for example.
