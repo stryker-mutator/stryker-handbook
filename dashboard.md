@@ -55,15 +55,15 @@ Enabeling the dashboard reporter works the same accross all implementations of S
 | | Stryker | Stryker.NET | Stryker4s |
 |-|-|-|-|
 | Full report | ❌|❌|❌|
-| Mutation score report | ✅ |❌|❌|
+| Mutation score report | ✅ |❌|✅|
 | `dashboard.*` settings | ❌|❌|❌|
 
 Retrieve `project` and `version` from build servers environment variables
 
 | | Stryker | Stryker.NET | Stryker4s |
 |-|-|-|-|
-| Travis | ✅ |❌|❌|
-| CircleCI | ✅ |❌|❌|
+| Travis | ✅ |❌|✅|
+| CircleCI | ✅ |❌|✅|
 | Azure dev/ops | ❌ |❌|❌|
 | GitlabCI | ❌ |❌|❌|
 | Github actions | ❌ |❌|❌|
