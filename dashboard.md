@@ -27,9 +27,9 @@ Current status:
 
 | | Stryker | Stryker.NET | Stryker4s |
 |-|-|-|-|
-| Full report | ✅|❌|❌|
+| Full report | ✅|❌|✅|
 | Mutation score report | ✅ |❌|✅|
-| `dashboard.*` settings | ✅|❌|❌|
+| `dashboard.*` settings | ✅|❌|✅|
 
 Enabeling the dashboard reporter works the same accross all implementations of Stryker.
 
@@ -52,7 +52,7 @@ The `project` and `version` settings can also be retrieved from your build serve
 | CircleCI | ✅ |❌|✅|
 | Azure dev/ops | ❌ |❌|❌|
 | GitlabCI | ❌ |❌|❌|
-| Github actions | ❌ |❌|❌|
+| Github actions | ✅ |❌|✅|
 
 ### Send a report via curl
 
