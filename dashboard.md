@@ -9,10 +9,6 @@ The Stryker dashboard is a dashboard for mutation testing: https://dashboard.str
 
 \* That support the [mutation testing report schema](https://github.com/stryker-mutator/mutation-testing-elements/tree/master/packages/mutation-testing-report-schema).
 
-⚠ Under construction ⚠
-
-The Stryker dashboard is still very much under construction.
-
 ## Enable the dashboard for your project
 
 Enabling the dashboard for your project is as simple as navigating to https://dashboard.stryker-mutator.io, loging in with your github account and enabling it for your repository.
@@ -27,9 +23,9 @@ Current status:
 
 | | Stryker | Stryker.NET | Stryker4s |
 |-|-|-|-|
-| Full report | ✅|❌|✅|
-| Mutation score report | ✅ |❌|✅|
-| `dashboard.*` settings | ✅|❌|✅|
+| Full report | ✅|✅|✅|
+| Mutation score report | ✅ |✅|✅|
+| `dashboard.*` settings | ✅|✅|✅|
 
 Enabeling the dashboard reporter works the same accross all implementations of Stryker.
 
