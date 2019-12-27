@@ -27,6 +27,9 @@ Current status:
 | Mutation score report | ✅ |✅|✅|
 | `dashboard.*` settings | ✅|✅|✅|
 
+Please visit [Stryker.NET specific docs](https://github.com/stryker-mutator/stryker-net/blob/master/docs/Reporters.md#dashboard-reporter
+) for Stryker.NET.
+
 Enabeling the dashboard reporter works the same accross all implementations of Stryker.
 
 1. Enabling the dashboard reporter is done by adding `"dashboard"` to the `"reporters"` configuration.
