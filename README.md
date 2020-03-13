@@ -11,6 +11,7 @@ Please feel free to contribute! It's as easy as editing directly from your brows
 * Supported languages
   * [Javascript & TypeScript (Stryker)](stryker)
     * [Getting Started](stryker/getting-started.md)
+    * [Roadmap](stryker/roadmap.md)
     * [Guides](stryker/guides/)
       * [Angular](stryker/guides/angular.md#angular)
       * [React](stryker/guides/react.md#react)
