@@ -7,7 +7,7 @@ All Stryker versions support a variety of different mutators. The difference in 
 | Mutator                                           | [Stryker](stryker/) | [Stryker.NET](stryker.net/) | [Stryker4s](stryker4s/) |
 | ------------------------------------------------- | :-----------------: | :-------------------------: | :---------------------: |
 | [Arithmetic Operator](#arithmetic-operator)       | ✅                   | ✅                           | ❌                       |
-| [Array Declaration](#array-declaration)           | ✅                   | ❌                           | ❌                       |
+| [Array Declaration](#array-declaration)           | ✅                   | ✅                           | ❌                       |
 | [Assignment Expression](#assignment-expression)   | ❌                   | ✅                           | n/a                     |
 | [Block Statement](#block-statement)               | ✅                   | ❌                           | ❌                       |
 | [Boolean Literal](#boolean-literal)               | ✅                   | ✅                           | ️✅                     |
