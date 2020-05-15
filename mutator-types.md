@@ -133,7 +133,7 @@ Stryker.NET *specific mutator*
 | `a === b` | `a !== b` ¹ |
 | `a !== b` | `a === b` ¹ |
 
-- ¹: Only supported on StrykerJS
+- ¹: Only supported on StrykerJS and Stryker4s
 
 [🔝 Back to Top](#supported-mutators)
 
