@@ -32,6 +32,9 @@ A mutant can have one of the following states:
   This can happen in compiled languages.
   Don't spend too much attention looking at this mutant. 
   It is not represented in your mutation score.
+* **Ignored**\
+  The mutant was not tested because the config of the user asked for it to be ignored. 
+  This will not count against your mutation score, but will show up in reports.
 
 ## Metrics
 
@@ -53,7 +56,7 @@ Based on these states we can calculate the following metrics:
   `runtime errors + compile errors`  
   The number of mutants that are invalid. They couldn't be tested because they produce either a compile error or a runtime error.
 * **Total mutants**\
-  `valid + invalid`  
+  `valid + invalid + ignored`  
   All mutants.
 * **Mutation score**\
   `detected / valid * 100`  
