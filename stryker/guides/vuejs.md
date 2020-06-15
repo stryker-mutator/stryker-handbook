@@ -34,7 +34,7 @@ module.exports = function (config) {
 ```
 
 ## Jest configuration
-The following config is a good starting point, the stryker-jest-runner will attempt to find your config file by looking in your package.json and in the current working directory.
+The following config is a good starting point; the stryker-jest-runner will attempt to find your config file by looking in your package.json and in the current working directory.
 
 If your jest config is somewhere else, please specify it.
 ```js

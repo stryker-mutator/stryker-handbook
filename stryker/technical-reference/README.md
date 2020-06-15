@@ -2,7 +2,7 @@
 
 This page contains a technical explanation about how Stryker works underneath. 
 It is a great place to start for new people eager to contribute to the Stryker project.
-Of course you are free to read it for entertaining purposes as well.
+Of course, you are free to read it for entertainment purposes as well.
 It is still a work in progress. Feedback is welcome! Please drop a line on [our gitter](https://gitter.im/stryker-mutator/stryker)
 to let us know how to improve.
 
@@ -43,9 +43,9 @@ This is what happens:
 
 ![Initial test run](diagrams/2.initial-test-run.png)
 
-As you can see first the input files are transpiled using the configured transpilers.
-This process is done entirely in-memory for performance reasons.
-Next, the transpiled output is used to configure a `Sandbox`. This in turn will copy the transpiled files to a 
+As you can see first, the input files are transpiled using the configured transpilers.
+This process is done entirely in memory for performance reasons.
+Next, the transpiled output is used to configure a `Sandbox`. This, in turn, will copy the transpiled files to a 
 a sub-folder in the .stryker-temp directory.
 
 See the [Run test](#run-test) sequence diagram for more details on how exactly the Sandbox interacts with the test runner.
