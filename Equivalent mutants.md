@@ -46,7 +46,7 @@ Notice that 10 ** 0 = 1, so even if we change `>=` to `<=` and even `<` or `>` w
 
 It is called _equivalent mutant_. There is no definitive way for Stryker to find and ignore them. There is currently also no way yet to mark them to be ignored.
 
-For now the only solution is by finding these by hand, which is time consuming and try to rewrite the code so it won't occur, or accept that you won't make 100%.
+For now, the only solution is by finding these by hand, which is time consuming and try to rewrite the code so it won't occur, or accept that you won't make 100%.
 
 First one has been shown above. The easiest schema for this mutant is:
 
@@ -58,8 +58,7 @@ if(whatever condition) {
 }
 ```
 
-The second one we have found is about `BigNumber`
-
+The second one we have found is about `BigInt`
 since `-0n` is transformed to `0n`, doing
 
 ```
@@ -69,4 +68,4 @@ a = (a <= 0n) ? -a : a;
 
 will produce another equivalent mutant.
 
-So knowing that for now, help us finding more of them and don't be scared of not 100% mutation score!
+So knowing that for now, help us find more of them and don't be scared of not 100% mutation score!

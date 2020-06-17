@@ -35,7 +35,7 @@ module.exports = function (config) {
 
 ## TSX projects
 
-For projects using TypeScript and TSX you can follow the JSX guide but with a few differences:
+For projects using TypeScript and TSX, you can follow the JSX guide but with a few differences:
 
 Recommended stryker packages: `npm i -D @stryker-mutator/core @stryker-mutator/jest-runner @stryker-mutator/typescript @stryker-mutator/html-reporter`
 

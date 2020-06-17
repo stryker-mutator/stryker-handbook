@@ -15,12 +15,12 @@ export enum PluginKind {
 
 They are loaded using the [`plugins` configuration option](https://github.com/stryker-mutator/stryker/tree/master/packages/core#plugins-string)
 
-Each plugin has it's own job to do. For inspiration, checkout the [stryker monorepo](https://github.com/stryker-mutator/stryker/tree/master/packages).
+Each plugin has it's own job to do. For inspiration, check out the [stryker monorepo](https://github.com/stryker-mutator/stryker/tree/master/packages).
 
 ## Creating a plugin
 
 Creating plugins is best done with typescript, as that will help you a lot with type safety. 
-We provide the `@stryker-mutator/api` dependency for the types and basic helper functionality. Install it with: `npm install @stryker-mutator/api`. 
+We provide the `@stryker-mutator/api` dependency on the types and basic helper functionality. Install it with: `npm install @stryker-mutator/api`. 
 
 Next, you need to create a class that _is the actual plugin_. For example:
 
@@ -68,7 +68,7 @@ export const strykerPlugins = [
 ## Dependency injection
 
 Stryker uses [typed-inject](https://github.com/nicojs/typed-inject#readme) as a [dependency injection framework](https://medium.com/@jansennico/advanced-typescript-type-safe-dependency-injection-873426e2cc96). 
-You can use it as well in your plugin
+You can use it as well in your plugin.
 
 See this example below. Here, a `Logger`, `StrykerOptions` and the `produceSourceMaps` boolean is injected.
 
@@ -92,4 +92,4 @@ This is type-safe. When you declare your plugin, TypedInject will validate that 
 
 ## What's next?
 
-If you need more help, please let us know on [gitter](https://gitter.im/stryker-mutator/stryker)
+If you need some help, please let us know on [gitter](https://gitter.im/stryker-mutator/stryker)

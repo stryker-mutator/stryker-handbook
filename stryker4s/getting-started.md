@@ -14,7 +14,7 @@ addSbtPlugin("io.stryker-mutator" % "sbt-stryker4s" % stryker4sVersion)
 
 ## 2 Configure
 
-Stryker4s will look for a `stryker4s.conf` file in the root of your project. If found it will use the configured values. All arguments in the configuration (and the file itself) are optional. You can find the possible values on our configuration page on [GitHub](https://github.com/stryker-mutator/stryker4s/blob/master/docs/CONFIGURATION.md#configuration).
+Stryker4s will look for a `stryker4s.conf` file in the root of your project. If found, it will use the configured values. All arguments in the configuration (and the file itself) are optional. You can find the possible values on our configuration page on [GitHub](https://github.com/stryker-mutator/stryker4s/blob/master/docs/CONFIGURATION.md#configuration).
 
 ## 3 Let's kill some mutants
 
@@ -26,5 +26,5 @@ sbt stryker
 
 ## 4 Having trouble?
 
-Having troubles? Try enabling debug logging, for more information on how to enable debug logging visit our [configuration page](https://github.com/stryker-mutator/stryker4s/blob/master/docs/CONFIGURATION.md#log-level).
-If you are having issues please let us know by [reporting an issue](https://github.com/stryker-mutator/stryker4s/issues/new) or talk to us on [Gitter](https://gitter.im/stryker-mutator/stryker4s).
+Are you having troubles? Try enabling debug logging, for more information on how to enable debug logging visit our [configuration page](https://github.com/stryker-mutator/stryker4s/blob/master/docs/CONFIGURATION.md#log-level).
+If you are having issues, please let us know by [reporting an issue](https://github.com/stryker-mutator/stryker4s/issues/new) or talk to us on [Gitter](https://gitter.im/stryker-mutator/stryker4s).

@@ -11,7 +11,7 @@ The Stryker dashboard is a dashboard for mutation testing: https://dashboard.str
 
 ## Enable the dashboard for your project
 
-Enabling the dashboard for your project is as simple as navigating to https://dashboard.stryker-mutator.io, loging in with your github account and enabling it for your repository.
+Enabling the dashboard for your project is as simple as navigating to https://dashboard.stryker-mutator.io, logging in with your GitHub account and enabling it for your repository.
 
 ## Send your first report
 
@@ -30,11 +30,11 @@ Current status:
 Please visit [Stryker.NET specific docs](https://github.com/stryker-mutator/stryker-net/blob/master/docs/Reporters.md#dashboard-reporter
 ) for Stryker.NET.
 
-Enabeling the dashboard reporter works the same accross all implementations of Stryker.
+Enabling the dashboard reporter works the same across all implementations of Stryker.
 
 1. Enabling the dashboard reporter is done by adding `"dashboard"` to the `"reporters"` configuration.
 2. Configure the reporter:
-   * Configuring the "project" is done via the `dashboard.project` configuration key (default: retrieved from environment)
+   * Configuring the "project" is done via the `dashboard.project` configuration key (default: retrieved from the environment)
    * Configuring the "module is done via the `dashboard.module` configuration key. 
    * Configuring the "version" is done via the `dashboard.version` configuration key. (default: retrieved from environment)
    * Configuring the "baseUrl" is done via the `dashboard.baseUrl` configuration key. It defaults to "https://dashboard.stryker-mutator.io".
@@ -70,9 +70,9 @@ Multiple results per `VERSION` are also supported using this url: `$BASE_URL$/ap
 
 The variables here are:
 * `BASE_URL`: `https://dashboard.stryker-mutator.io` for production, `https://stryker-dashboard-acceptance.azurewebsites.net/` for acceptance
-* `PROJECT`: The name registered with the dashboard. It is in the form of `gitProvider/organization/repository`. At the moment the dashboard backend only supports `github.com` as a git provider, but we will also support `gitlab.com`/`bitbucket.org`, etc in the future. It can have an indefinite number of levels. Slashes (`/`) in this name are _not_ escaped.  For example `github.com/stryker-mutator/stryker-net`.
+* `PROJECT`: The name registered with the dashboard. It is in the form of `gitProvider/organization/repository`. At the moment the dashboard backend only supports `github.com` as a git provider, but we will also support `gitlab.com`/`bitbucket.org`, etc. in the future. It can have an indefinite number of levels. Slashes (`/`) in this name are _not_ escaped.  For example `github.com/stryker-mutator/stryker-net`.
 * `VERSION`: the version of the report. This should be filled with the branch name, git tag or git sha (although no validation is done). You can override a report of a specific version, like docker tags. Slashes in the version should not be encoded. For example, it's valid to use "feat/logging". 
 * `API_KEY`: The API key that you retrieved by enabling the report on the dashboard.stryker-mutator.io website.
 * `REPORT_JSON`: A valid report according to the [mutation testing report schema](https://github.com/stryker-mutator/mutation-testing-elements/tree/master/packages/mutation-testing-report-schema), or a mutation score only report in the form of `{ "mutationScore": 42 }` (this way, you will have a mutation score badge, but no other information is stored).
-* `MODULE`: Optional. If you want to store multiple reports for a version, you can use this value to separate them logically. For example, in a mono-repo setup where each package (or project or module) delivers a report.
+* `MODULE`: Optional. If you want to store multiple reports for a version, you can use this value to separate them logically, for example, in a mono-repo setup where each package (or project or module) delivers a report.
 
