@@ -18,7 +18,7 @@ Let's analyse this example.
 Assume `a.comma` is greater than `b.comma`. For example 4 and 2
 
 We get that
-```
+```js
 max = 4
 min = 2
 if (4 >= 2) {
@@ -32,7 +32,7 @@ if we change `>=` sign in our source code to `<=` it won't work, so our mutant i
 If we change 4 and 2 to 3 and 5, we will get the same output: mutant will be killed.
 But what if we have both values the same? Let's say: 3, 3
 
-```
+```js
 max = 3
 min = 3
 if (3 >= 3) {
@@ -61,7 +61,7 @@ if(whatever condition) {
 The second one we have found is about `BigInt`
 since `-0n` is transformed to `0n`, doing
 
-```
+```js
 a = 0n
 a = (a <= 0n) ? -a : a;
 ```
