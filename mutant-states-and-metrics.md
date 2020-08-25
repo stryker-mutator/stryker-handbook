@@ -20,7 +20,7 @@ A mutant can have one of the following states:
   your CI build would detect it because the tests will never complete.
 * **Runtime error**\
   The running of the tests resulted in an error (rather than a failed test).
-  This can happen when the mutant fails outside of running a test. For example, when a testrunner fails, or for dynamic languages where the mutant resulted in unparsable code.
+  This can happen when the testrunner fails. For example, when a testrunner throws an `OutOfMemoryError` or for dynamic languages where the mutant resulted in unparsable code.
   Don't spend too much attention looking at this mutant. It is not represented in your mutation score.
 * **Compile error**\
   The mutant resulted in a compiler error. 
