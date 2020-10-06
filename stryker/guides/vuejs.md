@@ -50,6 +50,91 @@ To enable Stryker with your vue-cli project, we will have to rebuild parts of th
 
 Follow these steps to be able "manually" run webpack and mocha.
 
-1. Install `cross-env` and `webpack-cli`: `npm i -D webpack-cli cross-env` or `yarn add --dev webpack-cli cross-env`.
-2. Add webpack 
+1. Install `webpack-cli` and `glob`: `npm i -D webpack-cli glob` or `yarn add --dev webpack-cli glob`.
+2. Create a `webpack.stryker.config.js` file with the following content:
+   ```js
+   // webpack.stryker.config.js
+    const glob = require('glob');
+
+    // Set env
+    process.env.BABEL_ENV = 'test';
+    process.env.NODE_ENV = 'test';
+    process.env.VUE_CLI_BABEL_TARGET_NODE = 'true';
+    process.env.VUE_CLI_TRANSPILE_BABEL_RUNTIME = 'true';
+    process.env.BUILD_ENV = 'testing';
+
+    // Load webpack config
+    const conf = require('@vue/cli-service/webpack.config.js');
+
+    // Override the entry files
+    conf.entry = {
+      // Choose your test files here:
+      tests: ['./test/setup-unit.js', ...glob.sync('src/**/*+(spec).js').map((fileName) => `./${fileName}`)],
+    };
+
+    module.exports = conf;
+   ```
+3. Try it out: `npx webpack --config webpack.stryker.config.js`. This should create a `dist` directory with these files `dist/js/chunk-vendors.js` and `dist/js/tests.js`.
+   ```
+    $ npx webpack --config webpack.stryker.config.js
+    Starting type checking service...
+    Using 1 worker with 2048MB memory limit
+
+
+     DONE  Compiled successfully in 5343ms
+
+    Hash: 8a4d024467cd0b96397e
+    Version: webpack 4.44.2
+    Time: 5343ms
+    Built at: 10/06/2020 9:49:20 PM
+                Asset      Size  Chunks             Chunk Names
+          favicon.ico  4.19 KiB          [emitted]
+           index.html  1.02 KiB          [emitted]
+          js/tests.js  1000 KiB   tests  [emitted]  tests
+         version.json  91 bytes          [emitted]
+    Entrypoint tests = js/tests.js
+   ```
+
+4. Now test out a test run with `mocha`. Run `npx mocha --require @vue/cli-plugin-unit-mocha/setup.js dist/js/chunk-vendors.js dist/js/tests.js`.
+
+This needs to work first before progressing to the next step. You might need to tweak your `webpack.stryker.config.js` file in order to make this work.
+
+### Configure and run Stryker
+
+Once mocha runs succesfully on the webpack output, you're ready to install and run Stryker:
+
+1. Install the `@stryker-mutator/mocha-runner` plugin: `npm i -D @stryker-mutator/mocha-runner` or `yarn add --dev @stryker-mutator/mocha-runner`.
+2. Create your `stryker.conf.json` file: 
+   ```json
+   {
+    "$schema": "./node_modules/@stryker-mutator/core/schema/stryker-schema.json",
+    "testRunner": "mocha",
+    "concurrency": 2,
+    "coverageAnalysis": "perTest",
+    "symlinkNodeModules": false,
+    "buildCommand": "webpack --config webpack.stryker.config.js",
+    "mutator": {
+      "plugins": []
+    },
+    "mochaOptions": {
+      "package": "package.json",
+      "require": [
+        "@vue/cli-plugin-unit-mocha/setup.js"
+      ],
+      "spec": ["dist/js/chunk-vendors.js", "dist/js/tests.js"]
+    }
+   }
+   ```
+1. Add `.stryker-tmp` to your `.gitignore` file.
+1. Add this script to your package.json: 
+   ```json
+   {
+     "scripts": {
+        "test:mutation": "stryker run",
+     }
+   }
+   ```
+
+Now give it a go with `npm run test:mutation` or `yarn test:mutation`. 
+
 
