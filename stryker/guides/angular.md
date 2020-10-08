@@ -38,7 +38,7 @@ module.exports = function (config) {
     mutator: 'typescript',
     testRunner: 'karma',
     karma: {
-      configFile: 'src/karma.conf.js',
+      configFile: 'karma.conf.js',
       projectType: 'angular-cli',
       config: {
         browsers: ['ChromeHeadless']
