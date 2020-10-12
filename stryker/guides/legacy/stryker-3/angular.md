@@ -1,19 +1,19 @@
 # Angular
 
-Stryker supports Angular projects using the Angular CLI starting from @angular/cli v6.1.0. Are you using an older version? Then there are some tips later in this document.
+Stryker supports Angular projects using the Angular CLI between @angular/cli 6.1.0 and 8.3.29. Are you using an older version? Then there are some tips later in this document.
 
-## @angular/cli 6.1.0 and higher
+## @angular/cli 6.1.0-8.3.29
 
-This setup only works with @angular/cli 6.1.0 or higher. Are you using an older version of Angular? Then we highly suggest upgrading to at least version 6.1.0 of the cli. You can use the [Angular Update Guide](https://update.angular.io/) to help you with this. If it's not possible for you to upgrade your Angular version, please check out [this repo and its commits](https://github.com/nicojs/angular-stryker-example).
+This setup only works with @angular/cli 6.1.0-8.3.29. Are you using an older version of Angular? Then we highly suggest upgrading to at least version 6.1.0 of the cli. You can use the [Angular Update Guide](https://update.angular.io/) to help you with this. If it's not possible for you to upgrade your Angular version, please check out [this repo and its commits](https://github.com/nicojs/angular-stryker-example).
 
 ## Install
 
-Install the Stryker packages using this command: `npm i -D @stryker-mutator/core @stryker-mutator/karma-runner @stryker-mutator/typescript @stryker-mutator/html-reporter`
+Install the Stryker packages using this command: `npm i -D @stryker-mutator/core@3 @stryker-mutator/karma-runner@3 @stryker-mutator/typescript@3 @stryker-mutator/html-reporter@3`
 
 Recommended other packages:
 
-* @angular/cli 6.1.0 or higher
-* @angular-devkit/build-angular 0.7.2 or higher
+* @angular/cli 6.1.0-8.3.29
+* @angular-devkit/build-angular 0.7.2-0.803.29
 * karma 2.0.4 or higher
 * typescript 2.4.2 or higher
 
