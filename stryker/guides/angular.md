@@ -8,7 +8,7 @@ This setup only works with @angular/cli 9.0.0 or higher. Are you using an older 
 
 ## Install
 
-Either install the Stryker CLI globally using `npm install --global stryker-cli`, use `npx -p stryker-cli` in front of every Stryker command.
+Either install the Stryker CLI globally using `npm install --global stryker-cli`, or use `npx` in front of every Stryker command.
 Install the Stryker packages using the command `stryker init`.
 
 Recommended other packages:
