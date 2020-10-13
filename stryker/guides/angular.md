@@ -48,8 +48,19 @@ We highly suggest using a headless browser when testing using Stryker.
   "concurrency_comment": "Recommended to use about half of your available cores when running stryker with angular",
   "coverageAnalysis": "perTest"
 }
-
 ```
+
+Consider adding the Stryker TypeScript checker to increase mutation testing performance and kill mutants that would result in compilation errors:
+1. Install `@stryker-mutator/typescript-checker` as a development dependency:
+   `npm install --save-dev @stryker-mutator/typescript-checker`
+1. Configure the TypeScript checker in `stryker.conf.json`:
+   ```json
+   {
+     "checkers": ["typescript"],
+     "tsconfigFile": "tsconfig.json"
+   }
+   ```
+   If you experience issues, try setting the `tsconfigFile` option to `tsconfig.app.json`.
 
 ### Run
 
